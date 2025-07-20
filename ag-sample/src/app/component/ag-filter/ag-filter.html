@@ -1,0 +1,18 @@
+<div style="padding: 4px; width: 250px;">
+    <input #searchBox type="text" placeholder="検索..." [value]="filterText"
+        (input)="onFilterTextChanged(searchBox.value)"
+        style="width: 100%; margin-bottom: 4px; box-sizing: border-box;" />
+    <div style="max-height: 200px; overflow-y: auto; border: 1px solid #ccc;">
+        <label style="display: block; padding: 2px 4px;">
+            <input type="checkbox" [checked]="allSelected" (change)="toggleAll($any($event.target).checked)" />
+            <strong>すべて選択</strong>
+        </label>
+        @for (val of filteredValues; track val) {
+        <label style="display: block; padding: 2px 4px; cursor: pointer;">
+            <input type="checkbox" [checked]="isValueSelected(val)"
+                (change)="onValueToggled(val, $any($event.target).checked)" />
+            {{ val }}
+        </label>
+        }
+    </div>
+</div>

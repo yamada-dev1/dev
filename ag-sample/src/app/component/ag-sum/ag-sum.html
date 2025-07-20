@@ -1,0 +1,12 @@
+<ag-grid-angular
+  style="width: 100%; height: 600px;"
+  class="ag-theme-alpine"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [gridOptions]="gridOptions"
+  [pinnedTopRowData]="pinnedTopRowData"
+  (gridReady)="onGridReady($event)"
+  (filterChanged)="updatePinnedRow()"
+  (sortChanged)="updatePinnedRow()"
+  [animateRows]="true"
+></ag-grid-angular>

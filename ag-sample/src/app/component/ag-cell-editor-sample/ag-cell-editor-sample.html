@@ -1,0 +1,11 @@
+<button (click)="startEditTopLeftCell()">左上セルを編集開始</button>
+
+<ag-grid-angular
+  style="width: 100%; height: 400px;"
+  class="ag-theme-alpine"
+  [gridOptions]="gridOptions"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  (gridReady)="onGridReady($event)"
+></ag-grid-angular>
